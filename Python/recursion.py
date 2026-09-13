@@ -8,4 +8,5 @@ def add_one(num):
 
     return add_one(total)
 
-add_one(0)
+mynewtotal = add_one(0)
+print(mynewtotal)
