@@ -19,5 +19,20 @@ def add_one(num):
 
     return add_one(total)
 
+# Here i'm replacing recursion with loop
+
 mynewtotal = add_one(0) # add_one returns 10 at the end
 print(mynewtotal)       # so you print that 10
+
+# METHOD 1: for loop - Best
+for num in range(1, 11):
+    print(num)
+
+# METHOD 2: while loop - same logic as your recursion
+num = 0
+while num < 9:
+    num = num + 1
+    print(num)
+
+mynewtotal = num + 1 # this is your last return 10
+print(mynewtotal)
