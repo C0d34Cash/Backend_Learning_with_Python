@@ -20,3 +20,19 @@ print(message)
 player ={ "person" : "Dave" , "coins" : 3}
 message = "\n{person} has {coins} coins left.".format(**player)
 print(message)
+
+print("\n\n\n\n")
+
+###################
+# f-strings! That's the way!
+message = f"\n{person} has {coins} coins left."
+print(message)
+
+message = f"\n{person} has {2*5} coins left."
+print(message)
+
+message = f"\n{person.lower()} has {4*5} coins left."
+print(message)
+
+message = f'\n{player["person"]} has {5*10} coins left.'
+print(message)
