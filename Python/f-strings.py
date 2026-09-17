@@ -44,3 +44,6 @@ print(f"\n2.25 times {num} is {2.25 * num:.2f}")
 
 for num in range(1,11):
     print(f"\n2.25 times {num} is {2.25 * num:.2f}")
+
+for num in range(1,11):
+    print(f"\n2.25 divided by 4.52 is {(num) /4.52:.2f}")
