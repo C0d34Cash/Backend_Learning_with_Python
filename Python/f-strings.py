@@ -8,3 +8,6 @@ print(message)
 
 message = "\n{} has {} coins left.".format(person,coins)
 print(message)
+
+message = "\n{1} has {0} coins left.".format(coins,person)
+print(message)
