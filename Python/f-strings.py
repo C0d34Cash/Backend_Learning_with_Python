@@ -11,3 +11,12 @@ print(message)
 
 message = "\n{1} has {0} coins left.".format(coins,person)
 print(message)
+
+message = "\n{person} has {coins} coins left.".format(
+    person= person,coins=coins
+    )
+print(message)
+
+player ={ "person" : "Dave" , "coins" : 3}
+message = "\n{person} has {coins} coins left.".format(**player)
+print(message)
