@@ -45,10 +45,33 @@ print(" ")
 
 # print(nums.reverse()) # reversing the list
 
-(nums.insert(2,4)) # inserting 4 at index 2 in the list
-print(nums)
+# (nums.insert(2,4)) # inserting 4 at index 2 in the list
+# print(nums)
 
-print(nums.index(4)) # finding the index of the first occurrence of 4 in the list
+# print(nums.index(4)) # finding the index of the first occurrence of 4 in the list
 
-(nums.remove(4)) # removing the first occurrence of 4 from the list
-print(nums)
+# # (nums.remove(4)) # removing the first occurrence of 4 from the list
+# # print(nums)
+
+# del nums[2:5] # deleting the elements from index 2 to 4 from the list
+# print(nums) # printing the list after deleting the elements from index 2 to 4
+
+# nums.extend([6, 7, 8]) # extending the list by adding elements from another list
+# print(nums) # printing the list after extending it with another list
+
+# nums[2:5] = [9, 10, 11] # replacing the elements from index 2 to 4 with new elements
+# print(nums) # printing the list after replacing the elements from index 2 to 4 with new elements
+
+# min(nums) # finding the minimum element in the list
+# print(min(nums)) # printing the minimum element in the list
+
+# max(nums) # finding the maximum element in the list
+# print(max(nums)) # printing the maximum element in the list
+
+# sum(nums) # finding the sum of all elements in the list
+# print(sum(nums)) # printing the sum of all elements in the list
+
+
+a =   [1, 2, 3, 4, 5]
+b =   [6, 7, 8, 9, 10]
+print((a[:2]+ b[1:])[-3]) # concatenating the first two elements of list a with the last three elements of list b and then printing the third element from the end of the resulting list
