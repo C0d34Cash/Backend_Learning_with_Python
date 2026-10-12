@@ -76,7 +76,7 @@ Track daily learning and practice here:
 ```text
 backend-learning/
 ├── app/
-│   ├── main.py
+│   ├── python.py
 │   ├── models/
 │   ├── schemas/
 │   ├── api/
