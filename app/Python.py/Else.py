@@ -13,5 +13,14 @@ def Vote():
     else:
         print("Maa chuda")
 
-Vote()
+vote()
 
+
+# PRACTICE PROBLEM
+num = int(input("Enter a number: "))
+if num < 0:
+    print("negative number")
+elif num > 0:
+    print("postive number")
+else:
+    print("zero")
