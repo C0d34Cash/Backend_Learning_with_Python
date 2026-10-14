@@ -24,3 +24,14 @@ print(a <= b)
 print(a>=b)
 print(a==b)
 print(a!=b)
+
+x = 6
+y = 9
+a < 6 and y < 10
+a < 6 or  y < 6
+
+v = 8
+c = 7
+v += 2
+y -= x
+print(x > y and y > 0)
