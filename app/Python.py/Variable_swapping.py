@@ -110,3 +110,11 @@ print("".join(s)) # oellh
 # This is the only swap method you should use in your Backend project.
 # It's fast, clean, and every Python developer understands it.
 # The other methods (temp variable, XOR, + -) are just for learning.
+
+
+# PRACTICE PROBLEM
+str1 = "Debojyoti"
+str2 = "Telusko"
+str1, str2 = str2, str1
+print("str1:",str1)
+print("str2:",str2)
