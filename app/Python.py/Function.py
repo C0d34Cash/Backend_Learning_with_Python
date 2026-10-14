@@ -85,3 +85,25 @@ def api_response(status, *args, **kwargs):
     }
 
 print(api_response(200, "user1", "user2", page=1, limit=10))
+
+
+# For sorting, filtering
+users = [{"name": "A", "age": 21}, {"name": "B", "age": 19}]
+sorted_users = sorted(users, key=lambda x: x["age"])
+print(sorted_users)
+
+
+# BACKEND
+def logger(func):
+    def wrapper(*args, **kwargs):
+        print(f"Calling {func.__name__}...")
+        result = func(*args, **kwargs)
+        print(f"Done!")
+        return result
+    return wrapper
+
+@logger
+def login(user):
+    return f"{user} logged in"
+
+print(login("admin"))
