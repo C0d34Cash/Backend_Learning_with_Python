@@ -25,3 +25,9 @@ def greet(name):
     return f"Hello, {name}!"
 
 print(greet("Ari"))
+
+def create_user(name: str, age: int = 18) -> dict:
+    return {"name": name, "age": age, "active": True}
+
+print(create_user("Monda"))
+print(create_user("Monda", 21))
