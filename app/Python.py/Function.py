@@ -20,3 +20,8 @@ def add(x,y):
     print(c)
 
 add(3,2)
+
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Ari"))
