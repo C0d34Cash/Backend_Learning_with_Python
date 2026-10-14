@@ -90,3 +90,23 @@ b = 10
 print((b, a)) # (10, 5) -> This is a tuple
 
 a, b = (b, a) # Unpacking, brackets are optional
+
+# More pythonic ways
+# 3 variables
+a, b, c = 1, 2, 3
+a, b, c = b, c, a
+print(a, b, c) # 2 3 1
+
+# List elements
+nums = [1, 2, 3, 4]
+nums[0], nums[3] = nums[3], nums[0]
+print(nums) # [4, 2, 3, 1]
+
+# In a loop - reverse string
+s = list("hello")
+s[0], s[4] = s[4], s[0]
+print("".join(s)) # oellh
+
+# This is the only swap method you should use in your Backend project.
+# It's fast, clean, and every Python developer understands it.
+# The other methods (temp variable, XOR, + -) are just for learning.
