@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 a = 5
 b = 6
 # Variable swapping
@@ -36,7 +35,7 @@ b = 10
 a, b = b, a
 
 print(a) # 10
-=======
+
 a = 5
 b = 6
 # Variable swapping
@@ -74,5 +73,20 @@ b = 10
 a, b = b, a
 
 print(a) # 10
->>>>>>> 4aafddda039d6c9eb15ed5038b39ef71a2559924
 print(b) # 5
+
+# Why it works? - 
+# Tuple UnpackingPython does it in 2 steps internally:
+# Step 1: Right side creates a tuple
+temp_tuple = (b, a) # (10, 5)
+
+# Step 2: Left side unpacks it
+a = temp_tuple[0] # 10
+b = temp_tuple[1] # 5
+# You can see it:
+a = 5
+b = 10
+
+print((b, a)) # (10, 5) -> This is a tuple
+
+a, b = (b, a) # Unpacking, brackets are optional
