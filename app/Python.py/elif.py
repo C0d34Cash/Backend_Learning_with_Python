@@ -25,3 +25,15 @@ elif marks >= 33:
     print("Grade C")
 else:
     print("Fail")
+
+
+# Difference:nested if = if INSIDE if (second check only happens if first is true)
+# elif = different options at SAME level (only one will run)
+
+a = int(input("Enter number: "))
+if a > 0:
+    print("Positive")
+elif a < 0:
+    print("Negative")
+else:
+    print("Zero")
