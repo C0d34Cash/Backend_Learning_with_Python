@@ -34,3 +34,33 @@ while count < 3:
 
 # SO IN SHORT, LOOP COUNTER = i THAT YOU INCREASE/DECREASE TO CONTROL THE LOOP.
 
+
+
+# Nested while = one while inside another
+#  whileOuter loop = Rows
+# Inner loop = Columns
+
+# BASIC STRUCTURE
+# outer
+i = 1
+while i <= 3:
+    
+    # inner
+    j = 1
+    while j <= 3:
+        print(j, end=" ")
+        j += 1
+    
+    print() # new line
+    i += 1
+# TABLE OF 1 TO 3
+    i = 1
+while i <= 3:
+    j = 1
+    while j <= 10:
+        print(f"{i} x {j} = {i*j}")
+        j += 1
+    print("---")
+    i += 1
+# STAR PATTERN
+
