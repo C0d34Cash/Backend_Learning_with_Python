@@ -63,3 +63,10 @@ while True:
     if num % 8 == 0:
         break
 print(num)
+
+for num in range(10):
+     if num % 3 == 0:
+         continue
+     if num % 8 == 0:
+         break
+print(num)
