@@ -19,3 +19,26 @@ for i in range(1, 11):
     print(i)
 
 # Output: 1 2 3 4 6 7 8 9 10 (5 missing)
+# Use: When you want to ignore some values.
+# Print only even, skip odd
+for i in range(1, 11):
+    if i % 2 != 0:
+        continue  # skip odd
+    print(i) # 2 4 6 8 10
+
+# Side by Side Comparison
+numbers = [1, 2, 3, 4, 5, 6]
+
+# break
+for n in numbers:
+    if n == 4:
+        break
+    print(n)  # 1 2 3 -> stops at 4
+
+print("---")
+
+# continue
+for n in numbers:
+    if n == 4:
+        continue
+    print(n)  # 1 2 3 5 6 -> only 4 skipped
