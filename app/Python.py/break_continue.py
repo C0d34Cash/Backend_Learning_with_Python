@@ -42,3 +42,15 @@ for n in numbers:
     if n == 4:
         continue
     print(n)  # 1 2 3 5 6 -> only 4 skipped
+
+# In while loop - same
+i = 1
+while i <= 10:
+    if i == 5:
+        i += 1
+        continue # careful: must update before continue, else infinite loop
+    if i == 8:
+        break
+    print(i)
+    i += 1
+# 1 2 3 4 6 7
