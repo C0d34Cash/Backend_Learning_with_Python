@@ -55,7 +55,7 @@ while i <= 3:
     i += 1
 
 # TABLE OF 1 TO 3
-    i = 1
+i = 1
 while i <= 3:
     j = 1
     while j <= 10:
@@ -74,8 +74,7 @@ while i <= 5:
     print()
     i += 1
 
-
-# MATRIX /ROWS x COLS
+# MATRIX / ROWS x COLS
 i = 1
 while i <= 2:
     j = 1
@@ -84,10 +83,3 @@ while i <= 2:
         j += 1
     print()
     i += 1
-# (1,1) (1,2)
-# (2,1) (2,2)
-
-
-# GOLDEN-RULE
-# Always RE-initialize inner counter j = 1 inside outer loop. 
-# If you put it outside, inner loop will run only once.
