@@ -38,3 +38,21 @@ for i in range(1, 4):
     for j in range(1, 4):
         print(j, end=" ")
     print()
+
+# TABLE 1 TO 3
+for i in range(1, 4):
+    for j in range(1, 11):
+        print(f"{i} x {j} = {i*j}")
+    print("---")
+
+# STAR PATTERN
+for i in range(1, 6):
+    for j in range(1, i+1):
+        print("*", end=" ")
+    print()
+
+# MATRIX
+for i in range(1, 3):
+    for j in range(1, 3):
+        print(f"({i},{j})", end=" ")
+    print()
