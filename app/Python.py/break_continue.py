@@ -57,7 +57,7 @@
 
 
 while True:
-    num = int(input("Enter your desired number arsehole: "))
+    num = int(input("Enter your desired number arsehole: ")) # With user input
     if num % 3 == 0:
         continue
     if num % 8 == 0:
