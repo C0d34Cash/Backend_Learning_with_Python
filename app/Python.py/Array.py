@@ -115,4 +115,42 @@ print(my_array)  # array('i', [10, 15, 20, 30, 40, 50, 60])
 # ==========================================================================================================================
 # ==========================================================================================================================
 
+# Creating and printing Array elements
+import array as arr
 
+# 1. Create empty then add
+a = arr.array('i', [])  # empty
+a.append(10)
+a.append(20)
+print(a)  # array('i', [10, 20])
+
+# 2. Create directly with values
+b = arr.array('i', [10, 20, 30, 40, 50])
+print(b)
+
+# 3. Create from user input
+c = arr.array('i', [])
+n = int(input("How many elements? "))
+for i in range(n):
+    val = int(input(f"Enter element {i}: "))
+    c.append(val)
+print("Your array:", c)
+
+# Method 2: Using List (what you will actually use 99% time)
+# 1. Direct creation
+arr = [10, 20, 30, 40, 50]
+print(arr)  # [10, 20, 30, 40, 50]
+
+# 2. With loop
+arr = []
+for i in range(5):
+    arr.append(i * 10)
+print(arr)  # [0, 10, 20, 30, 40]
+
+# 3. From user input
+arr = []
+n = int(input("How many elements? "))
+for i in range(n):
+    x = int(input("Enter number: "))
+    arr.append(x)
+print(arr)
