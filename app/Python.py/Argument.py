@@ -192,3 +192,65 @@ details(name="Rahul", age=21)
 # age : 21
 
 details(name="Rahul", age=21, city="Kolkata", marks=90)
+# 3. Both Together - The Order Matters!
+def all_in_one(a, *args, **kwargs):
+    print(f"a = {a}")
+    print(f"args = {args}")
+    print(f"kwargs = {kwargs}")
+
+all_in_one(10, 20, 30, 40, name="Rahul", city="Kolkata")
+# a = 10
+# args = (20, 30, 40)
+# kwargs = {'name': 'Rahul', 'city': 'Kolkata'}
+
+print("******ORDER: normal -> _args -> *kwargs******")
+
+# 4. Real Examples for You
+# Example 1: Your Float Array Problem with Variable Args
+import array as arr
+
+def make_array_and_print(*values):
+    # values can be any length
+    my_arr = arr.array('d', values)
+    
+    for x in my_arr:
+        if x < 0:
+            continue
+        print(x)
+
+make_array_and_print(2.5, 4.8, -3.2, 6.7)
+# 2.5
+# 4.8
+# 6.7
+
+make_array_and_print(1.1, -2.2, 3.3, -4.4, 5.5, 100.5)
+# 1.1
+# 3.3
+# 5.5
+# 100.5
+# Example 2: Average Function
+def average(*marks):
+    if len(marks) == 0:
+        print("No marks given")
+        return
+    avg = sum(marks) / len(marks)
+    print(f"Average = {avg}")
+
+average(80, 90, 70)  # Average = 80.0
+average(100, 95, 98, 92, 96)  # Average = 96.2
+#Example 3: Student Report
+def report(name, *marks, **details):
+    print(f"Name: {name}")
+    print(f"Marks: {marks} -> Total: {sum(marks)}")
+    print(f"Other details: {details}")
+
+report("Rahul", 80, 90, 85, age=21, city="Kolkata", branch="CSE")
+# 5. Unpacking with _ and _* (Reverse)
+def add(a, b, c):
+    print(a + b + c)
+
+nums = [10, 20, 30]
+add(*nums)  # Same as add(10,20,30)
+
+data = {'a':10, 'b':20, 'c':30}
+add(**data)  # Same as add(a=10, b=20, c=30)
