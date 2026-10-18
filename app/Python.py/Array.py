@@ -70,3 +70,49 @@ arr.remove(99)     # remove value 99 -> [1,2,3]
 len(arr)           # length = 3
 sum(arr)           # sum = 6
 max(arr)           # max = 3
+
+# ============================================================================================
+# ============================================================================================
+
+# IMPORTING ARRAY MODULE
+# This is the real array in Python (not list).
+import array as arr
+# or
+import array
+from array import array
+
+# Full Example
+import array as arr
+
+# Syntax: array.array(typecode, [elements])
+
+# typecodes:
+# 'i' = signed integer
+# 'f' = float
+# 'd' = double float
+# 'u' = unicode character
+
+# Create integer array
+my_array = arr.array('i', [10, 20, 30, 40, 50])
+
+print(my_array)       # array('i', [10, 20, 30, 40, 50])
+print(my_array[0])    # 10
+print(my_array[2])    # 30
+
+# Loop
+for x in my_array:
+    print(x)
+
+# Methods - same as list mostly
+my_array.append(60)
+my_array.insert(1, 15)
+print(my_array)  # array('i', [10, 15, 20, 30, 40, 50, 60])
+
+# Type restriction - this will ERROR
+# my_array.append("hello") -> TypeError
+# my_array.append(3.5)     -> TypeError
+
+# ==========================================================================================================================
+# ==========================================================================================================================
+
+
