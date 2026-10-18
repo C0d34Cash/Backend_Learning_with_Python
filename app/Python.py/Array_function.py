@@ -57,3 +57,5 @@ arr = array("i",[10,20,30])
 arr.append(40)
 arr.reverse()
 print(arr[0])
+
+# 3. NumPy Array (For Data Science - Most Powerful)
