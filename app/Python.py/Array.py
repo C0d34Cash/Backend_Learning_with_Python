@@ -20,3 +20,11 @@ b = [4,5,6]
 arr = [1, 2, "hello", 3.5, True] # Everything allowed
 # This causes bugs, you might accidentally put string in int list
 # Real arrays allow only one type
+
+# 5. No built-in matrix operations
+# For 2D array you need nested lists [[1,2],[3,4]] which is messy. 
+# No easy transpose, determinant etc.
+
+# 6. Not good for fixed-size data
+# If you know you always have 100 items, list still can grow/shrink, wasting checks.
+
