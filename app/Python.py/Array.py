@@ -182,3 +182,17 @@ i = 0
 while i < len(a):
     print(a[i])
     i += 1
+
+
+
+
+
+# PRACTICE PROBLEM
+import array as ar
+m = ar.array("f", [2.5,4.8,-3.2,6.7])
+for element in m:
+    if element < 0:
+        continue
+    print(element)
+
+
