@@ -166,3 +166,29 @@ for x in my_arr:
 
 print("================================================================================")
 print("================================================================================")
+
+# Variable Length Arguments - _args and __kwargsThis lets you pass ANY number of arguments.
+# 1. _args - Many Values (Tuple)* means pack into tuple.
+def total(*numbers):
+    print(numbers)  # tuple
+    print(type(numbers))
+    s = 0
+    for n in numbers:
+        s += n
+    print(f"Sum = {s}")
+
+total(10, 20)              # (10, 20) Sum = 30
+total(10, 20, 30, 40)      # (10, 20, 30, 40) Sum = 100
+total()                    # () Sum = 0
+# 2. *_kwargs - Many Key-Value Pairs (Dictionary)_* means pack into dictionary.
+def details(**info):
+    print(info)  # dict
+    for key, value in info.items():
+        print(f"{key} : {value}")
+
+details(name="Rahul", age=21)
+# {'name': 'Rahul', 'age': 21}
+# name : Rahul
+# age : 21
+
+details(name="Rahul", age=21, city="Kolkata", marks=90)
