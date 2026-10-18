@@ -1,36 +1,29 @@
 # TYPE OF ARGUMENTS
-# 1. Positional Argument - order matters
-def add(a, b):
-    print(a + b)
 
-add(10, 20)  # a=10, b=20
-
-# 2. Keyword Argument - name matters, order doesn't
-add(b=20, a=10)  # same result
-
-# 3. Default Argument - if you don't give, it uses default
+# Default Arguments in Python
+# Default argument = value that is used if you don't pass anything.
 def greet(name="Guest"):
-    print(f"Hello {name}")
+    print(f"Hello, {name}")
 
-greet()         # Hello Guest
-greet("Rahul")  # Hello Rahul
+greet()          # Hello, Guest -> uses default
+greet("Rahul")   # Hello, Rahul -> uses your value
 
-# 4. Variable Length *args - takes many values as tuple
-def sum_all(*numbers):
-    total = 0
-    for n in numbers:
-        total += n
-    print(total)
+# IMPORTANT RULES
+# Rule 1: Default must be at the end
+# CORRECT
+def func(a, b=10):
+    print(a, b)
 
-sum_all(1, 2, 3)        # 6
-sum_all(10, 20, 30, 40) # 100
+# WRONG - will give error
+# def func(a=10, b): # Here is the error
+    print(a, b)
 
-# 5. Variable Length **kwargs - takes many as dictionary
-def show_info(**info):
-    for key, value in info.items():
-        print(f"{key} = {value}")
+# Rule 2: You can have many defaults
+def student(name="Unknown", age=18, city="Kolkata"):
+    print(f"{name}, {age}, {city}")
 
-show_info(name="Rahul", age=21, city="Kolkata")
-# name = Rahul
-# age = 21
-# city = Kolkata
+student()  # Unknown, 18, Kolkata
+student("Rahul")  # Rahul, 18, Kolkata
+student("Rahul", 21)  # Rahul, 21, Kolkata
+student("Rahul", 21, "Delhi")  # Rahul, 21, Delhi
+student(age=25)  # Unknown, 25, Kolkata - using keyword
