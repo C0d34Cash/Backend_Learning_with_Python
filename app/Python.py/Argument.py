@@ -76,3 +76,39 @@ my_arr = arr.array('d', [2.5, 4.8, -3.2, 6.7])
 print_positive(my_arr)  # Uses default True -> skips -3.2
 print("---")
 print_positive(my_arr, False)  # Override -> prints -3.2 also
+# In one line: Default argument = backup value.
+
+print("====================================================================================================================================================================")
+print("====================================================================================================================================================================")
+
+
+# HANDLING UNEXPECTED ARGUMENTS
+# When someone passes wrong number of arguments, Python throws error. 
+# We handle it with _args, _*kwargs and error handling.
+def add(a, b):
+    print(a + b)
+
+# add(10, 20, 30)  # ERROR! add() takes 2 but 3 given
+
+# Solution 1: *args for extra positional arguments
+def add(a, b, *extra):
+    print(f"a={a}, b={b}")
+    print(f"Extra unwanted: {extra}")
+    print(a + b)
+
+add(10, 20, 30, 40, 50)
+# a=10, b=20
+# Extra unwanted: (30, 40, 50)
+# 30
+#  Solution 2: **kwargs for extra keyword arguments
+def student(name, age):
+    print(f"{name}, {age}")
+
+def safe_student(name, age, **extra):
+    print(f"{name}, {age}")
+    if extra:
+        print(f"Ignoring extra info: {extra}")
+
+safe_student(name="Rahul", age=21, city="Kolkata", hobby="Coding")
+# Rahul, 21
+# Ignoring extra info: {'city': 'Kolkata', 'hobby': 'Coding'}
