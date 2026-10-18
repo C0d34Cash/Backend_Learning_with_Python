@@ -28,3 +28,34 @@ arr = [1, 2, "hello", 3.5, True] # Everything allowed
 # 6. Not good for fixed-size data
 # If you know you always have 100 items, list still can grow/shrink, wasting checks.
 
+
+# LIST THE ARRAY
+# Create
+arr = [10, 20, 30, 40, 50]
+
+# Access - indexing starts at 0
+print(arr[0])  # 10
+print(arr[1])  # 20
+print(arr[-1]) # 50 (last element)
+
+# Change
+arr[1] = 99
+print(arr) # [10, 99, 30, 40, 50]
+
+
+# LOOP THROUGH ARRAY
+arr = [10, 20, 30, 40]
+
+# for loop - most common
+for num in arr:
+    print(num)
+
+# with index
+for i in range(len(arr)):
+    print(f"Index {i} = {arr[i]}")
+
+# while loop (like you learned)
+i = 0
+while i < len(arr):
+    print(arr[i])
+    i += 1
