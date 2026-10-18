@@ -59,3 +59,14 @@ i = 0
 while i < len(arr):
     print(arr[i])
     i += 1
+
+# IMPORTANT LIST METHODS
+arr = [1, 2, 3]
+
+arr.append(4)      # add at end -> [1,2,3,4]
+arr.insert(1, 99)  # insert at index 1 -> [1,99,2,3,4]
+arr.pop()          # remove last -> [1,99,2,3]
+arr.remove(99)     # remove value 99 -> [1,2,3]
+len(arr)           # length = 3
+sum(arr)           # sum = 6
+max(arr)           # max = 3
