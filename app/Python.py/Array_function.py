@@ -58,27 +58,3 @@ arr.append(40)
 arr.reverse()
 print(arr[0])
 
-# 3. NumPy Array (For Data Science - Most Powerful). This is what companies actually use:
-import numpy as np
-a = np.array([10, 20, 30, 40])
-
-# Creation
-np.zeros(5)              # [0,0,0,0,0]
-np.ones(5)               # [1,1,1,1,1]
-np.arange(0, 10, 2)      # [0,2,4,6,8]
-np.linspace(0, 10, 5)    # 5 numbers between 0-10
-
-# Math functions - IMPOSSIBLE in list/array module
-a + 10                   # [20,30,40,50] - add 10 to all
-a * 2                    # [20,40,60,80]
-np.sum(a)                # 100
-np.mean(a)               # average
-np.max(a) / np.min(a)
-np.sort(a)
-np.sqrt(a)               # square root of each
-np.reshape(a, (2,2))     # convert to 2D
-
-# Important for exams
-a.shape                  # (4,) - size
-a.size                   # 4 - total elements
-a.dtype                  # int64
