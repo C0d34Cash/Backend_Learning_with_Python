@@ -33,3 +33,27 @@ a.buffer_info()     # (memory_address, length)
 a.tobytes()         # to bytes
 a.tolist()          # to list
 a.fromlist([40,50]) # add from list
+
+
+
+import array as arr
+arr1 = arr.array("i",[77,8,9,43])
+arr2 = arr.array(arr1.typecode,arr1.tolist())
+arr1[2]= 87
+print(arr1)
+print(arr2)
+
+
+import array as arr
+arr1 = arr.array("i",[77,8,9,43])
+arr2 = arr.array(arr1.typecode,(n for n in arr1))
+arr1[2]= 87
+print(arr1)
+print(arr2)
+
+
+from array import *
+arr = array("i",[10,20,30])
+arr.append(40)
+arr.reverse()
+print(arr[0])
