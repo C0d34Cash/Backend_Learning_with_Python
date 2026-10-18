@@ -254,3 +254,5 @@ add(*nums)  # Same as add(10,20,30)
 
 data = {'a':10, 'b':20, 'c':30}
 add(**data)  # Same as add(a=10, b=20, c=30)
+# ONE LINE TO REMEMBER
+#_args for values, _*kwargs for names = values.
