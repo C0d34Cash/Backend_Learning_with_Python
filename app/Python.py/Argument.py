@@ -355,3 +355,53 @@ print_array(data=my_arr, reverse=True)
 
 print("========================================")
 print("=========================================")
+
+# Definition
+def func(**kwargs):
+    print(kwargs)
+    print(type(kwargs))  # <class 'dict'>
+
+func(name="Rahul", age=21)
+# {'name': 'Rahul', 'age': 21}
+
+func(name="Rahul", age=21, city="Kolkata", branch="CSE")
+# {'name': 'Rahul', 'age': 21, 'city': 'Kolkata', 'branch': 'CSE'}
+# *kwargs always gives you a DICTIONARY_.
+
+# 2. Why We Need It?
+# Without _*kwargs you must fix number of keywords:
+# BAD - Only 2 allowed
+def student(name, city):
+    print(name, city)
+
+#  student"Rahul", city="Kolkata", age=21)  # ERROR
+
+# GOOD - Any number allowed 
+def student(**kwargs):
+    print(kwargs)
+
+student(name="Rahul", city="Kolkata", age=21, marks=90)  # Works
+
+# 3. Looping Through kwargs
+def show(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key} = {value}")
+
+show(name="Rahul", age=21, city="Kolkata")
+# name = Rahul
+# age = 21
+# city = Kolkata
+
+# 4. Mixing with Everything - FINAL FORM
+def final(a, b=10, *args, **kwargs):
+    print(f"a = {a}")
+    print(f"b = {b}")
+    print(f"args = {args}")     # tuple
+    print(f"kwargs = {kwargs}") # dict
+    print("-----")
+
+final(1, 2, 3, 4, 5, name="Rahul", age=21)
+# a = 1
+# b = 2
+# args = (3, 4, 5)
+# kwargs = {'name': 'Rahul', 'age': 21}
