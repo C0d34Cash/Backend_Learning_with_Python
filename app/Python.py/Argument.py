@@ -256,3 +256,13 @@ data = {'a':10, 'b':20, 'c':30}
 add(**data)  # Same as add(a=10, b=20, c=30)
 # ONE LINE TO REMEMBER
 #_args for values, _*kwargs for names = values.
+
+print("========================================")
+print("========================================")
+
+# KEYWORD ARGUMENTS
+# Rules to Remember
+#. Positional first, keyword second
+#. Keyword order doesn't matter
+#. Once you use keyword, all after must be keyword
+#. **kwargs collects all extra keywords as dict
