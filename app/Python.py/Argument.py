@@ -112,3 +112,53 @@ def safe_student(name, age, **extra):
 safe_student(name="Rahul", age=21, city="Kolkata", hobby="Coding")
 # Rahul, 21
 # Ignoring extra info: {'city': 'Kolkata', 'hobby': 'Coding'}
+
+#  Solution 3: Handle EVERYTHING (Best for real projects)
+def super_safe(*args, **kwargs):
+    print(f"Positional: {args}")
+    print(f"Keyword: {kwargs}")
+
+super_safe(10, 20, 30, name="Rahul", age=21)
+# Positional: (10, 20, 30)
+# Keyword: {'name': 'Rahul', 'age': 21}
+
+# Solution 4: Try-Except (For wrong types)
+def add(a, b):
+    try:
+        print(a + b)
+    except TypeError:
+        print("Error: Please pass only numbers!")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+
+add(10, 20)      # 30
+add(10, "Rahul") # Error: Please pass only numbers!
+
+# Full Example - Your Array Case
+import array as arr
+
+def create_float_array(*values, **options):
+    # options can have typecode='d' or 'f'
+    typecode = options.get('typecode', 'd')  # default 'd'
+    
+    # Filter only numbers, ignore unexpected strings etc
+    clean_values = []
+    for v in values:
+        if isinstance(v, (int, float)):
+            clean_values.append(v)
+        else:
+            print(f"Skipping invalid value: {v}")
+
+    if 'extra' in options:
+        print(f"Note: extra option ignored: {options['extra']}")
+
+    return arr.array(typecode, clean_values)
+
+# Test - passing unexpected arguments
+my_arr = create_float_array(2.5, 4.8, "hello", -3.2, 6.7, typecode='d', extra="test")
+print(my_arr)
+
+for x in my_arr:
+    if x < 0:
+        continue
+    print(x)
