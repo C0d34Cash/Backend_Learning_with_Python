@@ -154,3 +154,31 @@ for i in range(n):
     x = int(input("Enter number: "))
     arr.append(x)
 print(arr)
+
+# Method 3: Different Ways to PRINT
+import array as arr
+a = arr.array('i', [10, 20, 30, 40])
+
+# Way 1: Direct print (shows array('i', [...]))
+print(a)
+
+# Way 2: Print as list (clean)
+print(a.tolist())  # [10, 20, 30, 40]
+
+# Way 3: Loop - each element in new line
+for x in a:
+    print(x)
+
+# Way 4: Loop - in one line
+for x in a:
+    print(x, end=" ")  # 10 20 30 40
+
+# Way 5: Using index (like C language)
+for i in range(len(a)):
+    print(f"a[{i}] = {a[i]}")
+
+# Way 6: While loop (as you learned break/continue)
+i = 0
+while i < len(a):
+    print(a[i])
+    i += 1
