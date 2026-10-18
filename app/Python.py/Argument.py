@@ -266,3 +266,87 @@ print("========================================")
 #. Keyword order doesn't matter
 #. Once you use keyword, all after must be keyword
 #. **kwargs collects all extra keywords as dict
+
+# Keyword argument = you tell the function name = value1.
+#  BasiC:
+def student(name, age, city):
+    print(f"{name} {age} {city}")
+
+# Positional - order must be correct
+student("Rahul", 21, "Kolkata")  # Rahul 21 Kolkata
+
+# Keyword - order doesn't matter
+student(age=21, city="Kolkata", name="Rahul")  # Same output
+student(city="Kolkata", name="Rahul", age=21)  # Same output
+
+# Mixed - positional first, then keyword
+student("Rahul", age=21, city="Kolkata")  # OK
+
+# student(age=21, "Rahul", "Kolkata")  # ERROR! positional after keyword not allowed
+
+# 2. With Default Arguments (Main Use)
+def create_profile(name, age=18, city="Kolkata", branch="CSE"):
+    print(f"{name} | {age} | {city} | {branch}")
+
+create_profile("Rahul")  
+# Rahul | 18 | Kolkata | CSE - all defaults
+
+create_profile("Rahul", age=21)  
+# Rahul | 21 | Kolkata | CSE - change only age
+
+create_profile("Rahul", city="Delhi", age=22)  
+# Rahul | 22 | Delhi | CSE - skip age order, use keyword
+
+create_profile(branch="ECE", name="Anu", city="Mumbai")  
+# Anu | 18 | Mumbai | ECE - any order possible
+
+# 3. **kwargs = Many Keyword Arguments
+def details(**kwargs):
+    print(kwargs)
+
+details(name="Rahul", age=21)  
+# {'name': 'Rahul', 'age': 21}
+
+details(name="Rahul", age=21, city="Kolkata", marks=90)  
+# {'name': 'Rahul', 'age': 21, 'city': 'Kolkata', 'marks': 90}
+
+# 4. Forcing Keyword Only (Advanced - Interview)
+# Everything after * must be keyword
+def func(a, b, *, c, d):
+    print(a, b, c, d)
+
+func(10, 20, c=30, d=40)  # OK
+# func(10, 20, 30, 40)    # ERROR! c,d must be keyword
+
+# Practical use - prevent mistakes
+def create_array(*values, typecode='d'):
+    import array as arr
+    return arr.array(typecode, values)
+
+# typecode MUST be keyword, can't mess order
+arr1 = create_array(2.5, 4.8, -3.2, typecode='f')
+
+# 5. Your Array Example with Keywords
+import array as arr
+
+def print_array(data, skip_negative=True, reverse=False):
+    if reverse:
+        data = arr.array(data.typecode, reversed(data))
+    
+    for x in data:
+        if skip_negative and x < 0:
+            continue
+        print(x, end=" ")
+
+my_arr = arr.array('d', [2.5, 4.8, -3.2, 6.7])
+
+print_array(my_arr)  # 2.5 4.8 6.7 - uses defaults
+
+print_array(my_arr, skip_negative=False)  
+# 2.5 4.8 -3.2 6.7 - keyword changes behavior
+
+print_array(my_arr, reverse=True, skip_negative=False)  
+# 6.7 -3.2 4.8 2.5 - order doesn't matter because keywords
+
+print_array(data=my_arr, reverse=True)  
+# 6.7 4.8 2.5 - even data as keyword
