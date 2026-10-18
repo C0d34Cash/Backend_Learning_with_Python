@@ -405,3 +405,12 @@ final(1, 2, 3, 4, 5, name="Rahul", age=21)
 # b = 2
 # args = (3, 4, 5)
 # kwargs = {'name': 'Rahul', 'age': 21}
+
+
+
+# PRACTICE PRBLEM
+ # def greet (name, msg= "welcome to Telusko") # it's wrong because there is no ":"
+def greet (name, msg= "welcome to Telusko"): # Now it's right
+    print("Hello",name,msg)
+greet("Navin")
+greet("Harsh","Good to see you again")
