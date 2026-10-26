@@ -1,4 +1,4 @@
-#  INTRODUCTION - What is Recursion?
+# INTRODUCTION - What is Recursion?
 # Recursion is when a function calls itself.
 # Think of Russian dolls. 
 # To open the big doll, you need to open the smaller one inside, and so on.
