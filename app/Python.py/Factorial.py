@@ -54,5 +54,30 @@ def factorial(n):
     for i in range(2, n+1):
         result *= i
     return result
-
 print(factorial(5)) # 120
+
+# TESTING THE LARGE NUMBERS
+# Python is special - Unlike C/Java, Python int has no limit.
+# But speed matters.
+import math, time, sys
+sys.set_int_max_str_digits(100000) # needed for Python 3.11+
+
+# Test 1: Small number
+print(math.factorial(100)) # 158 digits - works instantly
+
+# Test 2: Large number timing
+start = time.time()
+f = math.factorial(5000) # 16326 digits
+print(f"5000! calculated in {time.time() - start:.4f}s, digits: {len(str(f))}")
+
+# Test 3: What fails? Recursion fails
+# factorial_recursive(1000) -> RecursionError: maximum recursion depth exceeded
+# So for n > 998, always use iterative or math.factorial()s
+
+def fact(n):
+    result = 1
+    for i in range(1, n+1):
+        result = result * i
+    return result
+res = fact(0)
+print(res)
