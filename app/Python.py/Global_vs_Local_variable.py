@@ -31,3 +31,13 @@ def something():
     print("print: ",a)
 something()
 print("print: ",a)
+
+
+x = 20
+def update():
+    global x
+    x = 10
+    print("Inside function: ", x)
+
+update()
+print("Outside function: ",x)
